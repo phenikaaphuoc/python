@@ -1,16 +1,7 @@
 import numpy as np
 import copy
-class Sovler:
-    def __init__(self,board = [ 0,1,0,    0,0,4,  0,6,0,
-          2,3,8,    9,0,7,  4,1,0,
-          4,0,0,    0,2,3,  0,8,7,
-          0,8,1,    0,0,0,  0,0,0,
-          6,5,0,    0,0,8,  1,0,2,
-          3,0,0,    0,0,6,  0,0,0,
-          8,2,0,    0,7,0,  5,3,9,
-          1,0,9,    0,0,5,  0,2,0,
-          5,0,3,    0,0,2,  0,0,0
-          ]):
+class Solve_Main:
+    def __init__(self,board):
 
         self.board = np.array(board).reshape(-1)
         self.is_default = np.where(self.board!=0,True,False).reshape(-1)
@@ -26,7 +17,7 @@ class Sovler:
 
 
 
-        return self.help_solve(self.board,0,self.old_span)
+        return self.help_solve(self.board,0,self.old_span),self.board
     def help_solve(self,board,index,span):
 
         if index >= 81:

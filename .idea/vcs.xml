@@ -2,6 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/yolov5" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/DeepFaceLearn/face_recognition" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/dem_xe/dem_xe/dem_xe" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/hand/hand_pose_yolov5" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sodoku" vcs="Git" />
   </component>
 </project>

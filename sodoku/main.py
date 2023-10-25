@@ -126,7 +126,7 @@ class Solver:
         number[mask] = 0
         return number
 
-    def solve(self,image_path,cap:Capture,print = False):
+    def solve(self,image_path,cap:Capture,print = True):
 
         data_cell,mask,location,origin_image  = extract_cell(image_path)
 

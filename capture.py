@@ -6,14 +6,12 @@ import keyboard
 class Capture:
     def __init__(self,window_title):
         self.window_title = window_title
-    def take_screenshot(self):
+    def take_screenshot(self,margin = [15,15,30,30] ):
         try:
             # Find the window by its title
             window = pygetwindow.getWindowsWithTitle(self)[0]
             x, y, width, height = window.left, window.top, window.width, window.height
 
-            margin = [15,15,30,30] #top left width height
-            # Capture the screenshot
             screenshot = pyautogui.screenshot(region=(x + margin[0], y + margin[1], width - margin[2], height - margin[3]))
 
             return np.array(screenshot)
@@ -21,16 +19,9 @@ class Capture:
         except IndexError:
 
             print("Window not found.")
-            return np.ones((228,228,1))
+            exit()
         except Exception as e:
             print(f"An error occurred: {str(e)}")
-            return np.ones((228,228,1))
+            exit()
 
 
-    while True:
-        screen = take_screenshot(window_title)
-        screen = cv2.resize(screen,(500,500))
-        cv2.imshow("hi",screen)
-        if cv2.waitKey(10) & keyboard.is_pressed('q'):
-            cv2.destroyAllWindows()
-            break
